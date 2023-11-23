@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/registro.css">
     <title>FullStack Academy</title>
 </head>
 
@@ -22,32 +22,29 @@
 
     </header>
     <div class="container">
+        <form action="registrar.php" method="post">
         <span class="blur"></span>
         <span class="blur"></span>
-        <form action="login.php" method="post">
-            <h2>Conecte-se</h2>
+            <h2>Registre-se</h2>
             <label for="username">Usuário:</label>
             <input type="text" name="username" required>
             <label for="password">Senha:</label>
             <input type="password" name="password" required>
-            <button type="submit">Entrar</button>
+            <button type="submit">Registrar</button>
         </form>
-        <p>Não tem uma conta? <a href="Registrar.php">Registre-se aqui</a></p>
+        <p>Já tem uma conta? <a href="login.php">Entre aqui</a></p>
     </div>
 
-
     <?php
+
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        // Verificar as credenciais (exemplo simples)
-        if ($username === 'user' && $password === 'pass') {
-            echo 'Logado com sucesso!';
-        } else {
-            echo 'Falha no login. Por favor, verifique seu usuário e senha.';
-        }
+
+
+        echo 'Cadastro realizado com sucesso!!';
     }
     ?>
 

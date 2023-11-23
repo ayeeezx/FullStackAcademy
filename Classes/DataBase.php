@@ -1,16 +1,16 @@
 <?php
 class Database
 {
-private $host = "localhost"; private $db_name =
-"denunciasnew";
-private $username = "root";
-private $password = "";
+private $host = "localhost"; private $fullstack =
+"fullstack";
+private $usuarios = "root";
+private $senha = "";
 public $conn;
 public function getConnection()
 {
 $this->conn = null;
 try { $this->conn = new PDO("mysql:host=" . $this->host .
-";dbname=" . $this->db_name, $this->username, $this->password);
+";fullstack=" . $this->fullstack, $this->usuarios, $this->senha);
 }
 catch(PDOException $exception)
 {

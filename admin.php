@@ -1,3 +1,26 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
+}
+
+if ($_SESSION['papel'] !== 'admin') {
+    echo "Você não tem permissão para acessar esta página.";
+    exit();
+}
+
+$conexao = new mysqli("localhost", "seu_usuario", "sua_senha", "site_vendas_cursos");
+
+if ($conexao->connect_error) {
+    die("Conexão falhou: " . $conexao->connect_error);
+}
+
+$sql = "SELECT * FROM usuarios";
+$result = $conexao->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,8 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>FullStack Academy</title>
+    <title>FullStack Administrativo</title>
 </head>
 
 <body>
@@ -24,7 +46,7 @@
             <li id="link2" class="link"><a href="#">Cursos</a></li>
             <li id="link3" class="link"><a href="#">Sobre</a></li>
         </ul>
-        <a href='./Login.php'> <button class="btn">Acessar</button></a>
+        <a href='./Login.php'> <button class="btn">Painel</button></a>
 
     </nav>
 
@@ -116,7 +138,6 @@
                     </p>
                 </div>
                 <button class="btn">Acessar</button>
-                
             </div>
             <div class="card">
                 <div class="content">
