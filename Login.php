@@ -1,3 +1,11 @@
+<?php
+include_once './Config/Config.php';
+include_once './Classes/Crud.php';
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -30,7 +38,7 @@
             <input type="text" name="username" required>
             <label for="password">Senha:</label>
             <input type="password" name="password" required>
-            <button type="submit">Entrar</button>
+            <button type="submit" name="enviar">Entrar</button>
         </form>
         <p>Não tem uma conta? <a href="Registrar.php">Registre-se aqui</a></p>
     </div>
@@ -38,17 +46,32 @@
 
     <?php
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST["enviar"])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        // Verificar as credenciais (exemplo simples)
-        if ($username === 'user' && $password === 'pass') {
-            echo 'Logado com sucesso!';
+        $crud = new Crud($db);
+
+        // Verificar as credenciais 
+        if ($username != null && $password != null) {
+            if ($crud->validate($username, $password)) {
+                header("Location: index.php");
+            } else {
+                echo "Falha no login. Por favor, verifique seu usuário e senha.  ";
+            }
         } else {
-            echo 'Falha no login. Por favor, verifique seu usuário e senha.';
+            echo 'preencha todos os campos ';
         }
     }
+
+    
+    if (isset($_POST["enviar"])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $crud = new Crud($db);
+    }
+
     ?>
 
     <div class="copyright">

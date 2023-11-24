@@ -1,3 +1,10 @@
+<?php
+include_once 'config/config.php';
+include_once 'classes/Crud.php';
+$crud = new Crud($db);
+$data = $crud->read();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
