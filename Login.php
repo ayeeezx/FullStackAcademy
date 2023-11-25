@@ -55,7 +55,11 @@ include_once './Classes/Crud.php';
         // Verificar as credenciais 
         if ($username != null && $password != null) {
             if ($crud->validate($username, $password)) {
-                header("Location: index.php");
+                if ($username != "admin" && $password != "admin") {
+                    header("Location: index.php");
+                } else {
+                    header("Location: admin.php");
+                }
             } else {
                 echo "Falha no login. Por favor, verifique seu usuário e senha.  ";
             }
@@ -64,7 +68,7 @@ include_once './Classes/Crud.php';
         }
     }
 
-    
+
     if (isset($_POST["enviar"])) {
         $username = $_POST['username'];
         $password = $_POST['password'];

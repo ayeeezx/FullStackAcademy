@@ -1,56 +1,57 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php"); 
-    exit();
-}
-
-if ($_SESSION['user_id'] !== 'admin') {
-    echo "Você não tem permissão para acessar esta página.";
-    exit();
-}   
-
-$conexao = new mysqli("localhost", "root", "", "fullstack");
-
-if ($conexao->connect_error) {
-    die("Conexão falhou: " . $conexao->connect_error);
-}
-
-$sql = "SELECT * FROM usuarios";
-$result = $conexao->query($sql);
+include_once 'config/config.php';
+include_once 'classes/Crud.php';
+$crud = new Crud($db);
+$data = $crud->read();
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Administração</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <title>Administração</title>
 </head>
+
 <body>
-    <h2>Painel de Administração</h2>
-    <h3>Lista de Usuários Cadastrados:</h3>
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-        </tr>
+    <nav>
+        <div class="nav-logo">
+            <a href="index.php">
+                <img src="img/logo.png">
+            </a>
+        </div>
 
-        <?php
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>
-                    <td>{$row['id']}</td>
-                    <td>{$row['nome']}</td>
-                    <td>{$row['email']}</td>
-                  </tr>";
-        }
-        ?>
+        <ul class="nav-links">
+            <li class="link"><a href="#">Início</a></li>
+            <li id="link1" class="link"><a href="#">Características</a></li>
+            <li id="link2" class="link"><a href="#">Cursos</a></li>
+            <li id="link3" class="link"><a href="#">Sobre</a></li>
+        </ul>
+        <a href='./Login.php'> <button class="btn">Acessar</button></a>
 
-    </table>
+    </nav>
 
-    <a href="logout.php">Sair</a>
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <H1><span>Painel Administrativo</span></H1>
+            <H4>Usuários cadastrados</H4>
+        </div>
+    </header>
+
+    
+
+    <div class="copyright">
+        Copyright © 2023 FullStack Academy. Todos os direitos reservados.
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>
