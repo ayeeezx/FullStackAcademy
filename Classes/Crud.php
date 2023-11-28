@@ -16,6 +16,11 @@ class Crud
         return $stmt;
     }
 
+
+
+
+
+    // --------------------------------------------READ----------------------------------------------
     public function read()
     {
         $query = "SELECT * FROM fullstack." . $this->table_name;
@@ -23,6 +28,14 @@ class Crud
         $stmt->execute();
         return $stmt;
     }
+    public function read2($id)
+    {
+        $query = "SELECT * FROM fullstack." . $this->table_name. " WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$id]);
+        return $stmt;
+    }
+
     public function readEdit($id)
     {
         $query = "SELECT * FROM fullstack." . $this->table_name . " WHERE id = :id";
@@ -31,11 +44,18 @@ class Crud
         $stmt->execute();
         return $stmt;
     }
-    public function update($id, $nome, $senha)
+    // --------------------------------------------READ----------------------------------------------
+
+
+
+
+
+
+    public function update($id, $nome, $senha, $curso)
     {
-        $query = "UPDATE fullstack." . $this->table_name . " SET nome = ?, senha = ? WHERE id = ?";
+        $query = "UPDATE fullstack." . $this->table_name . " SET nome = ?, senha = ?, idCurso = ? WHERE id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$nome, $senha, $id]);
+        $stmt->execute([$nome, $senha, $curso, $id]);
         return $stmt;
     }
     public function updateCurso($nome)

@@ -52,7 +52,6 @@ include_once './Classes/Crud.php';
         $password = $_POST['password'];
         $_SESSION["username"] = $username;
         $crud = new Crud($db);
-
         // Verificar as credenciais 
         if ($username != null && $password != null) {
             if ($crud->validate($username, $password)) {
@@ -69,15 +68,8 @@ include_once './Classes/Crud.php';
         }
     }
 
-
-    if (isset($_POST["enviar"])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        
-        $crud = new Crud($db);
-    }
-
     ?>
+
 
     <div class="copyright">
         Copyright © 2023 FullStack Academy. Todos os direitos reservados.
