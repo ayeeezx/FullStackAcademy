@@ -7,11 +7,10 @@
 
 ## Layout 
 ![Index](https://github.com/ayeeezx/assets/blob/main/index.png)
-![Cadastro](https://github.com/ayeeezx/assets/blob/main/cadastro.png) 
+![Cadastro](https://github.com/ayeeezx/assets/blob/main/registro.png) 
 ![Login](https://github.com/ayeeezx/assets/blob/main/login.png)
-![Denúncia Anônima](https://github.com/ayeeezx/assets/blob/main/anonimo.png) 
-![Denúncia](https://github.com/ayeeezx/assets/blob/main/denuncia.png)
-![Testemunha](https://github.com/ayeeezx/assets/blob/main/testemunha.png)
+![Denúncia](https://github.com/ayeeezx/assets/blob/main/admin.png)
+![Testemunha](https://github.com/ayeeezx/assets/blob/main/logo.png)
 
 
 ## Diagrama ER
