@@ -5,8 +5,7 @@
 # Sobre o projeto
  FullStack Academy foi feita para proporcionar aulas Gratuitas e formar programadores FullStack.
 
-## Layout 
-#Tela Principal
+### - Tela Principal
 ![Index](https://github.com/ayeeezx/assets/blob/main/index.png)
 
 
