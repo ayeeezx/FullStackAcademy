@@ -38,6 +38,13 @@ class Crud
         $stmt->execute([$nome, $senha, $id]);
         return $stmt;
     }
+    public function updateCurso($nome)
+    {
+        $query = "UPDATE fullstack.usuarios SET idCurso = 1 WHERE nome = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$nome]);
+        return $stmt;
+    }
 
     public function delete($id)
     {

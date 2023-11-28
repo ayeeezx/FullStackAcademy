@@ -44,7 +44,18 @@ $data = $crud->read();
         </div>
     </header>
 
-    
+    <section>
+        <div class="table">
+            <table>
+                <tr>
+                    <td>
+                        <h1>Usuário</h1>
+                        <h1>Curso cadastrado:</h1>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
 
     <div class="copyright">
         Copyright © 2023 FullStack Academy. Todos os direitos reservados.

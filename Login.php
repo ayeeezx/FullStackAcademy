@@ -47,9 +47,10 @@ include_once './Classes/Crud.php';
     <?php
 
     if (isset($_POST["enviar"])) {
+        session_start();
         $username = $_POST['username'];
         $password = $_POST['password'];
-
+        $_SESSION["username"] = $username;
         $crud = new Crud($db);
 
         // Verificar as credenciais 
@@ -72,7 +73,7 @@ include_once './Classes/Crud.php';
     if (isset($_POST["enviar"])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-
+        
         $crud = new Crud($db);
     }
 

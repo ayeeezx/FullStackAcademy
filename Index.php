@@ -3,6 +3,7 @@ include_once 'config/config.php';
 include_once 'classes/Crud.php';
 $crud = new Crud($db);
 $data = $crud->read();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,7 @@ $data = $crud->read();
             <h4>TORNE-SE AGORA UM PROGRAMADOR FULLSTACK</h4>
             <H1>Olá, Somos a <span>FullStack Academy</span></H1>
             <p>
-                Criamos a FullStack Academy com o propósito de proporcionar a todos a chance de se tornar um programador FullStack 
+                Criamos a FullStack Academy com o propósito de proporcionar a todos a chance de se tornar um programador FullStack
                 e poder entrar nesse mundo onde só há Códigos e Lógica.
             </p>
             <a href='./Login.php'><button class="btn">Iniciar</button></a>
@@ -95,92 +96,98 @@ $data = $crud->read();
         <p class="sub-header">
             Os melhores cursos das maiores línguas de programação do mundo estão disponíveis!
         </p>
-        <div class="pricing">
-            <div class="card">
-                <div class="content">
-                    <h4>HTML5</h4>
-                    <h3>GRÁTIS</h3>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Aulas e cursos de elite
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Códigos profissionais
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Treinamento Pessoal
+        <form method="post">
+            <div class="pricing">
+                <div class="card">
+                    <div class="content">
+                        <h4>HTML5</h4>
+                        <h3>GRÁTIS</h3>
+                        <p>
+                            <i class="ri-checkbox-circle-line"></i>
+                            Aulas e cursos de elite
+                        </p>
+                        <p>
+                            <i class="ri-checkbox-circle-line"></i>
+                            Códigos profissionais
+                        </p>
+                        <p>
+                            <i class="ri-checkbox-circle-line"></i>
+                            Treinamento Pessoal
 
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Plano de codificação inteligente
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Exercícios para acelerar o aprendizado
-                    </p>
-                </div>
-                <button class="btn">Acessar</button>
-                
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h4>PHP</h4>
-                    <h3>GRÁTIS</h3>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Aulas e cursos de elite
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Códigos profissionais
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Treinamento Pessoal
+                        </p>
+                        <p>
+                            <i class="ri-checkbox-circle-line"></i>
+                            Plano de codificação inteligente
+                        </p>
+                        <p>
+                            <i class="ri-checkbox-circle-line"></i>
+                            Exercícios para acelerar o aprendizado
+                        </p>
+                    </div>
+                    <button id="htmlbtn" name="html" class="btn">Acessar</button>
+        </form>
+        <?php
+        if (isset($_POST['html'])) {
+            $crud->updateCurso($_SESSION['username']);
+        }
+        ?>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h4>PHP</h4>
+                <h3>GRÁTIS</h3>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Aulas e cursos de elite
+                </p>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Códigos profissionais
+                </p>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Treinamento Pessoal
 
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Plano de codificação inteligente
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Exercícios para acelerar o aprendizado
-                    </p>
-                </div>
-                <button class="btn">Acessar</button>
+                </p>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Plano de codificação inteligente
+                </p>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Exercícios para acelerar o aprendizado
+                </p>
             </div>
-            <div class="card">
-                <div class="content">
-                    <h4>CSS</h4>
-                    <h3>GRÁTIS</h3>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Aulas e cursos de elite
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Códigos profissionais
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Treinamento Pessoal
+            <button class="btn">Acessar</button>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h4>CSS</h4>
+                <h3>GRÁTIS</h3>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Aulas e cursos de elite
+                </p>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Códigos profissionais
+                </p>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Treinamento Pessoal
 
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Plano de codificação inteligente
-                    </p>
-                    <p>
-                        <i class="ri-checkbox-circle-line"></i>
-                        Exercícios para acelerar o aprendizado
-                    </p>
-                </div>
-                <button class="btn" >Acessar</button>
+                </p>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Plano de codificação inteligente
+                </p>
+                <p>
+                    <i class="ri-checkbox-circle-line"></i>
+                    Exercícios para acelerar o aprendizado
+                </p>
             </div>
+            <button class="btn">Acessar</button>
+        </div>
         </div>
     </section>
 

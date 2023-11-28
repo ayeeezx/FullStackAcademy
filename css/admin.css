@@ -84,6 +84,13 @@ nav {
     padding: 5rem 2rem;
 }
 
+table{
+    display: absolute;
+    padding: 1rem;
+    background-color: rgb(5, 40, 150);
+}
+
+
 .blur {
     position: absolute;
     box-shadow: 0 0 1000px 50px #1d4ed8;
@@ -128,7 +135,6 @@ header .content p {
     margin-bottom: 2rem;
     color: #ccc;
 }
-
 
 .copyright {
     max-width: 1200px;
