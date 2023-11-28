@@ -6,11 +6,16 @@
  FullStack Academy foi feita para proporcionar aulas Gratuitas e formar programadores FullStack.
 
 ## Layout 
+#Tela Principal
+![Index](https://github.com/ayeeezx/assets/blob/main/index.png)
+
+
+#Telas de Login e Registro
 ![Cadastro](https://github.com/ayeeezx/assets/blob/main/registro.png) 
 ![Login](https://github.com/ayeeezx/assets/blob/main/login.png)
-![Denúncia](https://github.com/ayeeezx/assets/blob/main/admin.png)
-![Index](https://github.com/ayeeezx/assets/blob/main/index.png)
-![Testemunha](https://github.com/ayeeezx/assets/blob/main/logo.png)
+
+#Painel Administrativo
+![admin](https://github.com/ayeeezx/assets/blob/main/admin.png)
 
 
 ## Diagrama ER
