@@ -6,9 +6,9 @@
  FullStack Academy foi feita para proporcionar aulas Gratuitas e formar programadores FullStack.
 
 ## Layout 
-![Index](https://github.com/ayeeezx/assets/blob/main/index.png)
 ![Cadastro](https://github.com/ayeeezx/assets/blob/main/registro.png) 
 ![Login](https://github.com/ayeeezx/assets/blob/main/login.png)
+![Index](https://github.com/ayeeezx/assets/blob/main/index.png)
 ![Denúncia](https://github.com/ayeeezx/assets/blob/main/admin.png)
 ![Testemunha](https://github.com/ayeeezx/assets/blob/main/logo.png)
 
