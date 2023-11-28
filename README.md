@@ -5,15 +5,15 @@
 # Sobre o projeto
  FullStack Academy foi feita para proporcionar aulas Gratuitas e formar programadores FullStack.
 
-### - Tela Principal
+### Tela Principal
 ![Index](https://github.com/ayeeezx/assets/blob/main/index.png)
 
 
-#Telas de Login e Registro
+### Telas de Login e Registro
 ![Cadastro](https://github.com/ayeeezx/assets/blob/main/registro.png) 
 ![Login](https://github.com/ayeeezx/assets/blob/main/login.png)
 
-#Painel Administrativo
+### Painel Administrativo
 ![admin](https://github.com/ayeeezx/assets/blob/main/admin.png)
 
 
