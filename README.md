@@ -24,8 +24,10 @@
 # Tecnologias utilizadas
 ## Back end
 - PHP
-## Front end
-- HTML / CSS / JS
+- HTML
+- CSS
+- JS
+- FIGMA
 
 
 # Autor
